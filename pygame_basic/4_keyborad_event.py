@@ -2,7 +2,7 @@ import pygame
 
 pygame.init() # 초기화 (반드시 필요)
 
-# 화면 크기 설정 
+# 화면 크기 설정 합니다
 screen_width = 480 # 가로
 screen_height = 640 # 세로
 screen = pygame.display.set_mode((screen_width, screen_height))
@@ -10,7 +10,7 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 # 화면 타이틀 설정
 pygame.display.set_caption("Nado Game") # 게임이름
 
-# 배경 이미지 불러오기
+# 배경 이미지 불러오기 입니다
 background = pygame.image.load("C:/Users/Kim Family/Desktop/Python_ex/pygame_basic/background.png")
 
 # 스프라이트 불러오기
@@ -21,7 +21,7 @@ character_height = character_size[1] # 캐릭터의 세로 크기
 character_x_pos = (screen_width / 2) - (character_width / 2) # 화면 가로 position의 절반 크기에 해당하는 곳에 위치
 character_y_pos = screen_height - character_height # 화면 세로 크기 가장 아래에 해당하는 곳에 위치
 
-# 이동할 좌표이빈다
+# 이동할 좌표
 to_x = 0
 to_y = 0
 
