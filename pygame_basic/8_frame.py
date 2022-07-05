@@ -1,4 +1,7 @@
 import pygame
+##############################################
+
+# 기본 초기화(반드시 해야 하는 것들)
 
 pygame.init() # 초기화 (반드시 필요)
 
@@ -8,11 +11,14 @@ screen_height = 640 # 세로
 screen = pygame.display.set_mode((screen_width, screen_height))
 
 # 화면 타이틀 설정
-pygame.display.set_caption("Nado Game") # 게임이름
+pygame.display.set_caption("공튀기기") # 게임이름
 
-#FPS 블러와서 변수로 지정
+#FPS 불러와서 변수로 지정
 clock = pygame.time.Clock()
 
+##############################################
+
+# 1. 사용자 게임 초기화(배경화면, 게임 이미지, 좌표, 속도, 폰트등)
 
 # 배경 이미지 불러오기 입니다
 background = pygame.image.load("C:/Users/Kim Family/Desktop/Python_ex/pygame_basic/background.png")
@@ -58,6 +64,7 @@ while running:
     
     print(" fps : " + str(clock.get_fps()))
     
+    # 2. 이벤트 처리(키보드, 마우스등)
     for event in pygame.event.get(): #어떤 이벤트가 발생하였는가?
         if event.type == pygame.QUIT: # 창의 X버튼을 누르면 이 이벤트가 발생
             running = False # 게임이 진행중이 아님
@@ -77,9 +84,14 @@ while running:
                 to_x = 0
             elif event.key == pygame.K_UP or event.key == pygame.K_DOWN:
                 to_y = 0
-                
+    # 3. 게임 캐릭터 위치 정의            
     character_x_pos += to_x * dt
     character_y_pos += to_y * dt
+    
+    # 4. 충돌 처리
+    
+    # 5. 화면에 그리기
+    
     
     # 가로 경계값 처리
     if character_x_pos < 0:
